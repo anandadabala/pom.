@@ -1,0 +1,57 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+        name: ngnix-deploy
+
+
+        labels:
+                app: ngnix
+spec:
+        replicas: 2
+        selector:
+                matchLabels:
+                        app: ngnix
+        template:
+                metadata:
+                        name: ngnix-pod
+                        labels:
+                                app: ngnix
+                spec:
+                    containers:
+                     -  name: ngnix-container
+                        image: docker89781/image:latest
+                        imagePullPolicy: Always
+                        ports:
+                            - containerPort: 8080
+                        volumeMounts:
+                                - name: cache-volume
+                                  mountPath: /cache
+
+                                - name: host-test
+                                  mountPath: /test-mnt
+                    volumes:
+                            - name: cache-volume
+                              emptyDir: {}
+
+                            - name: host-test
+                              hostPath:
+                                      path: /testvol
+---
+apiVersion: v1
+kind: Service
+metadata:
+        name: my-service
+
+        labels:
+                app: ngnix
+spec:
+        selector:
+                app: ngnix
+        type: NodePort
+
+        ports:
+                - nodePort: 31001
+                  port: 8080
+                  targetPort: 8080
