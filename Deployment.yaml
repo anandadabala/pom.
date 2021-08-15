@@ -25,19 +25,6 @@ spec:
                         imagePullPolicy: Always
                         ports:
                             - containerPort: 8080
-                        volumeMounts:
-                                - name: cache-volume
-                                  mountPath: /cache
-
-                                - name: host-test
-                                  mountPath: /test-mnt
-                    volumes:
-                            - name: cache-volume
-                              emptyDir: {}
-
-                            - name: host-test
-                              hostPath:
-                                      path: /testvol
 ---
 apiVersion: v1
 kind: Service
