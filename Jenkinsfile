@@ -25,11 +25,11 @@ pipeline
                 }
             steps 
             {
-            sh "sudo docker build -t docker89781/image:${BUILD_NUMBER} ."
+            sh "docker build -t docker89781/image:${BUILD_NUMBER} ."
         
-            sh "sudo docker tag docker89781/image:${BUILD_NUMBER} docker89781/image:latest"
-            sh "sudo docker login --username=docker89781 --password=Devops@8978"
-            sh "sudo docker push docker89781/image:latest"
+            sh "docker tag docker89781/image:${BUILD_NUMBER} docker89781/image:latest"
+            sh "docker login --username=docker89781 --password=Devops@8978"
+            sh "docker push docker89781/image:latest"
             }
         }
      stage('deploy to k8 env') 
