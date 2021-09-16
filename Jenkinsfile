@@ -1,7 +1,7 @@
 properties([parameters([string(defaultValue: 'kube@192.168.76.139', description: '', name: 'ServerDeployment', trim: false), choice(choices: ['YES', 'NO'], description: '', name: 'BUILD'), string(defaultValue: 'main', description: '', name: 'Branch', trim: false)])])
 pipeline 
 {
-    agent { label 'ubuntuslave' }
+    agent any
     environment {
         
         BUILD_NUMBER= "${env.BUILD_NUMBER}"
@@ -36,8 +36,8 @@ pipeline
        {
            steps
            {
-             sh  "scp Deployment.yaml ${ServerDeployment}:/opt/dockerk8"
-             sh "ssh -T ${ServerDeployment} kubectl apply -f /opt/dockerk8/Deployment.yaml"
+             
+             sh " kubectl apply -f ."
            }
        }
     }
