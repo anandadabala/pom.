@@ -28,11 +28,11 @@ pipeline
             steps 
             {
             
-            sh "$docker build -t docker89781/image:${BUILD_NUMBER} ."
+                sh "${docker} build -t docker89781/image:${BUILD_NUMBER} ."
         
-            sh "$docker tag docker89781/image:${BUILD_NUMBER} docker89781/image:latest"
-            sh "$docker login --username=docker89781 --password=Devops@8978"
-            sh "$docker push docker89781/image:latest"
+                sh "${docker} tag docker89781/image:${BUILD_NUMBER} docker89781/image:latest"
+                sh "${docker} login --username=docker89781 --password=Devops@8978"
+                sh "${docker} push docker89781/image:latest"
             
             
             }
@@ -43,7 +43,7 @@ pipeline
            {
 
              
-             sh "$ubectl apply -f ."
+               sh "${kubectl} apply -f ."
              
            }
        }
