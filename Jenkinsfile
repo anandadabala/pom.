@@ -4,7 +4,8 @@ pipeline
 {
     agent any
     environment {
-        BIN = tool 'BIN',type: 'dockerTool'
+        docker = "/usr/local/bin/docker"
+        kubectl = "/usr/local/bin/kubectl"
         BUILD_NUMBER= "${env.BUILD_NUMBER}"
     }
     
@@ -27,11 +28,11 @@ pipeline
             steps 
             {
             
-            sh "$BIN/docker build -t docker89781/image:${BUILD_NUMBER} ."
+            sh "$docker build -t docker89781/image:${BUILD_NUMBER} ."
         
-            sh "$BIN/docker tag docker89781/image:${BUILD_NUMBER} docker89781/image:latest"
-            sh "$BIN/docker login --username=docker89781 --password=Devops@8978"
-            sh "$BIN/docker push docker89781/image:latest"
+            sh "$docker tag docker89781/image:${BUILD_NUMBER} docker89781/image:latest"
+            sh "$docker login --username=docker89781 --password=Devops@8978"
+            sh "$docker push docker89781/image:latest"
             
             
             }
@@ -42,7 +43,7 @@ pipeline
            {
 
              
-             sh "$BIN/kubectl apply -f ."
+             sh "$ubectl apply -f ."
              
            }
        }
