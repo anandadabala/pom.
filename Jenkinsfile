@@ -26,19 +26,24 @@ pipeline
                 }
             steps 
             {
+            withEnv(['export PATH=$PATH:/usr/local/bin']) {
             sh "docker build -t docker89781/image:${BUILD_NUMBER} ."
         
             sh "docker tag docker89781/image:${BUILD_NUMBER} docker89781/image:latest"
             sh "docker login --username=docker89781 --password=Devops@8978"
             sh "docker push docker89781/image:latest"
             }
+            
+            }
         }
      stage('deploy to k8 env') 
        {
            steps
            {
+             withEnv(['export PATH=$PATH:/usr/local/bin']) {
              
-             sh "/usr/local/bin/kubectl apply -f ."
+             sh "kubectl apply -f ."
+             }
            }
        }
     }
