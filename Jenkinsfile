@@ -1,4 +1,5 @@
 properties([parameters([string(defaultValue: 'kube@192.168.76.139', description: '', name: 'ServerDeployment', trim: false), choice(choices: ['YES', 'NO'], description: '', name: 'BUILD'), string(defaultValue: 'main', description: '', name: 'Branch', trim: false)])])
+tool name: 'DOCKER', type: 'dockerTool'
 pipeline 
 {
     agent any
@@ -25,11 +26,11 @@ pipeline
                 }
             steps 
             {
-            sh "/usr/local/bin/docker build -t docker89781/image:${BUILD_NUMBER} ."
+            sh "docker build -t docker89781/image:${BUILD_NUMBER} ."
         
-            sh "/usr/local/bin/docker tag docker89781/image:${BUILD_NUMBER} docker89781/image:latest"
-            sh "/usr/local/bin/docker login --username=docker89781 --password=Devops@8978"
-            sh "/usr/local/bin/docker push docker89781/image:latest"
+            sh "docker tag docker89781/image:${BUILD_NUMBER} docker89781/image:latest"
+            sh "docker login --username=docker89781 --password=Devops@8978"
+            sh "docker push docker89781/image:latest"
             }
         }
      stage('deploy to k8 env') 
