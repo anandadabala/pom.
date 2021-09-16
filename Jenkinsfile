@@ -4,7 +4,7 @@ pipeline
 {
     agent any
     environment {
-        docker = "/usr/local/bin/docker"
+        Docker = "/usr/local/bin/docker"
         kubectl = "/usr/local/bin/kubectl"
         BUILD_NUMBER= "${env.BUILD_NUMBER}"
     }
@@ -28,11 +28,11 @@ pipeline
             steps 
             {
             
-                sh "${docker} build -t docker89781/image:${BUILD_NUMBER} ."
+                sh "${Docker} build -t docker89781/image:${BUILD_NUMBER} ."
         
-                sh "${docker} tag docker89781/image:${BUILD_NUMBER} docker89781/image:latest"
-                sh "${docker} login --username=docker89781 --password=Devops@8978"
-                sh "${docker} push docker89781/image:latest"
+                sh "${Docker} tag docker89781/image:${BUILD_NUMBER} docker89781/image:latest"
+                sh "${Docker} login --username=docker89781 --password=Devops@8978"
+                sh "${Docker} push docker89781/image:latest"
             
             
             }
