@@ -4,7 +4,7 @@ pipeline
 {
     agent any
     environment {
-        
+        BIN = tool 'BIN'
         BUILD_NUMBER= "${env.BUILD_NUMBER}"
     }
     
@@ -26,13 +26,13 @@ pipeline
                 }
             steps 
             {
-            withEnv(['export PATH=$PATH:/usr/local/bin']) {
-            sh "docker build -t docker89781/image:${BUILD_NUMBER} ."
+            
+            sh "$BIN/docker build -t docker89781/image:${BUILD_NUMBER} ."
         
-            sh "docker tag docker89781/image:${BUILD_NUMBER} docker89781/image:latest"
-            sh "docker login --username=docker89781 --password=Devops@8978"
-            sh "docker push docker89781/image:latest"
-            }
+            sh "$BIN/docker tag docker89781/image:${BUILD_NUMBER} docker89781/image:latest"
+            sh "$BIN/docker login --username=docker89781 --password=Devops@8978"
+            sh "$BIN/docker push docker89781/image:latest"
+            
             
             }
         }
@@ -40,10 +40,10 @@ pipeline
        {
            steps
            {
-             withEnv(['export PATH=$PATH:/usr/local/bin']) {
+
              
-             sh "kubectl apply -f ."
-             }
+             sh "$BIN/kubectl apply -f ."
+             
            }
        }
     }
