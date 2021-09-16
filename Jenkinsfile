@@ -43,7 +43,8 @@ pipeline
            {
 
              
-               sh "${kubectl} apply -f ."
+               sh "${kubectl} delete -f ."
+               sh "${kubectl} create -f ."
              
            }
        }
