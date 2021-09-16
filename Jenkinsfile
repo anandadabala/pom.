@@ -4,7 +4,7 @@ pipeline
 {
     agent any
     environment {
-        BIN = tool 'BIN'
+        BIN = tool 'BIN',type: 'dockerTool'
         BUILD_NUMBER= "${env.BUILD_NUMBER}"
     }
     
