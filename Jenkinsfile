@@ -4,7 +4,7 @@ pipeline
 {
     agent any
     environment {
-        PATH = "/usr/local/bin/docker:$PATH"
+        
         BUILD_NUMBER= "${env.BUILD_NUMBER}"
     }
     
