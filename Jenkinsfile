@@ -37,7 +37,7 @@ pipeline
            steps
            {
              
-             sh " kubectl apply -f ."
+             sh "/usr/local/bin/kubectl apply -f ."
            }
        }
     }
