@@ -1,5 +1,5 @@
 properties([parameters([string(defaultValue: 'kube@192.168.76.139', description: '', name: 'ServerDeployment', trim: false), choice(choices: ['YES', 'NO'], description: '', name: 'BUILD'), string(defaultValue: 'main', description: '', name: 'Branch', trim: false)])])
-#tool name: 'DOCKER', type: 'dockerTool'
+
 pipeline 
 {
     agent any
