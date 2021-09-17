@@ -64,8 +64,8 @@ pipeline
              
            }
        }
-        stage('mail notification')
-        {
+    }
+        
         post{
  
  
@@ -83,9 +83,9 @@ pipeline
  Regards,
  MonitoringTeam,
  9370522227''', cc: 'devops.clouds8978@gmail.com', from: '', replyTo: '', subject: 'BuildOver!!', to: 'devops.clouds8978@gmail.com'
- }
+ 
     }
+            
         }
     
-}
 }
