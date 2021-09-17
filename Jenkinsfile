@@ -22,7 +22,7 @@ pipeline
         stage('sonar'){ 
             steps{
                 
-                    sh "${ScannerHome}/4.6.2.2472_1/libexec/bin -Dproject.settings=sonar-project.properties"
+                    sh "${ScannerHome}/4.6.2.2472_1/libexec/bin/sonar-scanner -Dproject.settings=sonar-project.properties"
             }
         }
         
