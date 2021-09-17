@@ -7,9 +7,14 @@ pipeline
         Docker = "/usr/local/bin/docker"
         kubectl = "/usr/local/bin/kubectl"
         ScannerHome= "/usr/local/Cellar/sonar-scanner"
-        JavaCmd = tool name: 'Java', type: 'jdk'
+        
         PATH = "/Users/adabalah/jdk-14.0.1.jdk/Contents/Home/bin:$PATH"
         BUILD_NUMBER= "${env.BUILD_NUMBER}"
+    }
+    
+    tool
+    {
+        tool name: 'Java', type: 'jdk'
     }
     
     stages
@@ -24,7 +29,7 @@ pipeline
         stage('sonar'){ 
             steps{
                 
-                    sh "${ScannerHome}/4.6.2.2472_1/libexec/bin/sonar-scanner -Dproject.settings=sonar-project.properties"
+                    sh "${ScannerHome}/4.6.2.2472_1/libexec/bin/sonar-scanner sonar.login="admin" sonar.password="Sonar123" -Dproject.settings=sonar-project.properties"
             }
         }
         
