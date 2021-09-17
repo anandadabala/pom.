@@ -18,6 +18,12 @@ pipeline
           }
         }
             
+        stage('sonar'){ 
+            steps{ 
+                withSonarQubeEnv('sonar'){ 
+                    sh ${ScannerHome}/bin/sonar-scanner -Dproject.settings=sonar-project.properties
+                } 
+            }
         
     
         stage('docker Build')
