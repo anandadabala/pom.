@@ -50,6 +50,7 @@ pipeline
        {
            when {
              expression { params.BUILD == 'YES' }
+           }
            steps
            {
 
