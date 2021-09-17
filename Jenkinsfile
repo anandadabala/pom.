@@ -1,4 +1,4 @@
-properties([parameters([string(defaultValue: 'kube@192.168.76.139', description: '', name: 'ServerDeployment', trim: false), choice(choices: ['YES', 'NO'], description: '', name: 'BUILD'), choice(choices: ['YES', 'NO'], description: '', name: 'Sonar-BUILD'), choice(choices: ['YES', 'NO'], description: '', name: 'Kube-ENV'), string(defaultValue: 'main', description: '', name: 'Branch', trim: false)])])
+properties([parameters([string(defaultValue: 'kube@192.168.76.139', description: '', name: 'ServerDeployment', trim: false), choice(choices: ['YES', 'NO'], description: '', name: 'BUILD'), choice(choices: ['YES', 'NO'], description: '', name: 'SONAR'), choice(choices: ['YES', 'NO'], description: '', name: 'KUBE'), string(defaultValue: 'main', description: '', name: 'Branch', trim: false)])])
 pipeline 
 {
     agent any
