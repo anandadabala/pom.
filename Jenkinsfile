@@ -12,9 +12,10 @@ pipeline
         BUILD_NUMBER= "${env.BUILD_NUMBER}"
     }
     
-    tool
+    tools
     {
-        tool name: 'Java', type: 'jdk'
+        
+     JDK  'Java-14.0'
     }
     
     stages
