@@ -29,7 +29,7 @@ pipeline
         stage('sonar'){ 
             steps{
                 
-                    sh "${ScannerHome}/4.6.2.2472_1/libexec/bin/sonar-scanner sonar.login="admin" sonar.password="Sonar123" -Dproject.settings=sonar-project.properties"
+                    sh "${ScannerHome}/4.6.2.2472_1/libexec/bin/sonar-scanner sonar.login=admin sonar.password=Sonar123 -Dproject.settings=sonar-project.properties"
             }
         }
         
