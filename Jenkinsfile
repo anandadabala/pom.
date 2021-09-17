@@ -64,6 +64,8 @@ pipeline
              
            }
        }
+        stage('mail notification')
+        {
         post{
  
  
@@ -72,7 +74,7 @@ pipeline
 
  Regards,
  MonitoringTeam,
- 9980923226''', cc: 'devops.clouds8978@gmail.com', from: '', replyTo: '', subject: 'BuildOver!!', to: 'devops.clouds8978@gmail.com'
+ 9370522227''', cc: 'devops.clouds8978@gmail.com', from: '', replyTo: '', subject: 'BuildOver!!', to: 'devops.clouds8978@gmail.com'
  }
  
  failure{
@@ -80,10 +82,10 @@ pipeline
 
  Regards,
  MonitoringTeam,
- 9980923226''', cc: 'devops.clouds8978@gmail.com', from: '', replyTo: '', subject: 'BuildOver!!', to: 'devops.clouds8978@gmail.com'
+ 9370522227''', cc: 'devops.clouds8978@gmail.com', from: '', replyTo: '', subject: 'BuildOver!!', to: 'devops.clouds8978@gmail.com'
  }
     }
-    
+        }
     
 }
 }
