@@ -64,6 +64,24 @@ pipeline
              
            }
        }
+        post{
+ 
+ 
+ success{
+ mail bcc: 'devops.clouds8978@gmail.com', body: '''BuildOver!....
+
+ Regards,
+ MonitoringTeam,
+ 9980923226''', cc: 'devops.clouds8978@gmail.com', from: '', replyTo: '', subject: 'BuildOver!!', to: 'devops.clouds8978@gmail.com'
+ }
+ 
+ failure{
+ mail bcc: 'devops.clouds8978@gmail.com', body: '''BuildOver!....
+
+ Regards,
+ MonitoringTeam,
+ 9980923226''', cc: 'devops.clouds8978@gmail.com', from: '', replyTo: '', subject: 'BuildOver!!', to: 'devops.clouds8978@gmail.com'
+ }
     }
     
     
