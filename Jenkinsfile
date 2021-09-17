@@ -6,6 +6,7 @@ pipeline
     environment {
         Docker = "/usr/local/bin/docker"
         kubectl = "/usr/local/bin/kubectl"
+        ScannerHome= tool name: 'Sonar-scanner', type: 'hudson.plugins.sonar.SonarRunnerInstallation'
         BUILD_NUMBER= "${env.BUILD_NUMBER}"
     }
     
