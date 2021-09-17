@@ -23,7 +23,7 @@ pipeline
             
         stage('sonar'){ 
             when {
-             expression { params.BUILD == 'YES' }
+             expression { params.SONAR == 'YES' }
                 }
             steps{
                 
@@ -52,7 +52,7 @@ pipeline
      stage('deploy to k8 env') 
        {
            when {
-             expression { params.BUILD == 'YES' }
+             expression { params.KUBE == 'YES' }
                 }
            
            steps
