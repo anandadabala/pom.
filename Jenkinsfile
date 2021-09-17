@@ -7,6 +7,8 @@ pipeline
         Docker = "/usr/local/bin/docker"
         kubectl = "/usr/local/bin/kubectl"
         ScannerHome= "/usr/local/Cellar/sonar-scanner"
+        JavaCmd = tool name: 'Java', type: 'jdk'
+        PATH = "/Users/adabalah/jdk-14.0.1.jdk/Contents/Home/bin:$PATH"
         BUILD_NUMBER= "${env.BUILD_NUMBER}"
     }
     
