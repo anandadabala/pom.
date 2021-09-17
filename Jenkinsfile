@@ -52,7 +52,7 @@ pipeline
      stage('deploy to k8 env') 
        {
            when {
-             expression { params.Kube-ENV == 'YES' }
+             expression { params.BUILD == 'YES' }
                 }
            
            steps
