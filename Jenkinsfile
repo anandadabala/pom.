@@ -21,10 +21,12 @@ pipeline
             
         stage('sonar'){ 
             steps{ 
-                withSonarQubeEnv('sonar'){ 
+                withSonarQubeEnv('Sonar')
+                { 
                     sh ${ScannerHome}/bin/sonar-scanner -Dproject.settings=sonar-project.properties
                 } 
             }
+        }
         
     
         stage('docker Build')
