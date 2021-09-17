@@ -23,7 +23,6 @@ pipeline
             steps{
                 
                     sh "${ScannerHome}/4.6.2.2472_1/libexec/bin -Dproject.settings=sonar-project.properties"
-                } 
             }
         }
         
