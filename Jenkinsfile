@@ -25,7 +25,7 @@ pipeline
         stage('sonar'){ 
             steps{
                 
-                    sh "${ScannerHome}/4.6.2.2472_1/libexec/bin/sonar-scanner -Dsonar.login=admin -Dsonar.password=Sonar123 -Dsonar.projectKey   -Dsonar.sources=.    
+             sh "${ScannerHome}/4.6.2.2472_1/libexec/bin/sonar-scanner -Dsonar.login=admin -Dsonar.password=Sonar123 -Dsonar.projectKey -Dsonar.sources=."   
             }
         }
         
