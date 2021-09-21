@@ -82,7 +82,7 @@ pipeline
 
  Regards,
  MonitoringTeam,
- 9370522227''', cc: 'devops.clouds8978@gmail.com', from: '', replyTo: '', subject: 'BuildFailure!!', to: 'devops.clouds8978@gmail.com'
+ 9370522227''', cc: 'devops.clouds8978@gmail.com', from: '', replyTo: '', subject: 'Buildfailure', to: 'devops.clouds8978@gmail.com'
  
     }
             
