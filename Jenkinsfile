@@ -74,7 +74,7 @@ pipeline
 
  Regards,
  MonitoringTeam,
- 9370522227''', cc: 'devops.clouds8978@gmail.com', from: '', replyTo: '', subject: 'BuildOver!!', to: 'devops.clouds8978@gmail.com'
+ 9370522227''', cc: 'devops.clouds8978@gmail.com', from: '', replyTo: '', subject: 'BuildSuccess!!', to: 'devops.clouds8978@gmail.com'
  }
  
  failure{
@@ -82,7 +82,7 @@ pipeline
 
  Regards,
  MonitoringTeam,
- 9370522227''', cc: 'devops.clouds8978@gmail.com', from: '', replyTo: '', subject: 'BuildOver!!', to: 'devops.clouds8978@gmail.com'
+ 9370522227''', cc: 'devops.clouds8978@gmail.com', from: '', replyTo: '', subject: 'BuildFailure!!', to: 'devops.clouds8978@gmail.com'
  
     }
             
