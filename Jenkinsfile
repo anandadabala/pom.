@@ -60,7 +60,7 @@ pipeline
 
              
                
-               sh "${kubectl} create -f ."
+               sh "${kubectl} apply -f ."
              
            }
        }
