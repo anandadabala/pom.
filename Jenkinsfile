@@ -59,7 +59,7 @@ pipeline
            {
 
              
-               sh "${kubectl} delete -f ."
+               
                sh "${kubectl} create -f ."
              
            }
